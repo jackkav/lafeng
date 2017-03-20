@@ -7,8 +7,8 @@ services:
       - ./server/:/app
     working_dir: /app
     ports:
-      - "3080:3080"
-    command: yarn build && yarn watch
+      - "3090:3080"
+    command: yarn start
 
   client:
     image: node:7.7.2-alpine
@@ -17,7 +17,7 @@ services:
       - ./client/:/app
     working_dir: /app
     ports:
-      - "3080:3000"
-    command: yarn build && yarn watch
+      - "3070:3000"
+    command: yarn start
 volumes:
   yarn:

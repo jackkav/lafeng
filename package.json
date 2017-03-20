@@ -4,8 +4,9 @@
   "description": "",
   "scripts": {
     "start": "concurrently \"npm run server\" \"npm run client\"",
-    "server": "cd client && npm start",
-    "client": "cd client && npm start"
+    "server": "cd server && npm start",
+    "client": "cd client && npm start",
+    "docker": "docker-compose -f dev.yml up"
   },
   "author": "",
   "license": "ISC",
