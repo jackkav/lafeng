@@ -1,0 +1,9 @@
+{
+    "recommendations": [
+        "PeterJausovec.vscode-docker",
+        "dbaeumer.vscode-eslint",
+        "waderyan.gitblame",
+        "kumar-harsh.graphql-for-vscode",
+        "christian-kohler.path-intellisense"
+    ]
+}
