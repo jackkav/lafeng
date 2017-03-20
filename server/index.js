@@ -1,13 +1,31 @@
-const express = require('express');
+const Koa = require('koa')
+const Router = require( 'koa-router')
+const convert = require('koa-convert')
+const graphqlHTTP = require('koa-graphql')
+const fs = require( 'fs')
+import { makeExecutableSchema } from 'graphql-tools'
+import { MongoClient } from 'mongodb'
+import { resolverMap } from './resolvers'
 
-// Constants
-const PORT = 3080;
+const app = new Koa()
+const router = new Router()
+let schemasText = fs.readdirSync('./schemas/').map((fileName) => fs.readFileSync(`./schemas/${fileName}`, 'utf-8'))
 
-// App
-const app = express();
-app.get('/', function (req, res) {
-  res.send('Hello world\n');
-});
+const schema = makeExecutableSchema({
+  resolvers: resolverMap,
+  typeDefs: schemasText,
+})
+MongoClient.connect(process.env.MONGODB_URL)
+  .then((db) => {
+    console.log('Running...')
 
-app.listen(PORT);
-console.log('Running on http://localhost:' + PORT);
+    router.all('/graphql', convert(graphqlHTTP({
+      context: { db },
+      schema,
+      graphiql: true,
+    })))
+
+    app.use(router.routes()).use(router.allowedMethods())
+
+    app.listen(3080)
+  })

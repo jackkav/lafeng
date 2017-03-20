@@ -2,13 +2,15 @@ version: '3'
 services:
   api:
     image: node:7.7.2-alpine
+    env_file:
+      - .env
     volumes:
       - yarn:/root/.cache/yarn
       - ./server/:/app
     working_dir: /app
     ports:
       - "3090:3080"
-    command: yarn start
+    command: yarn watch
 
   client:
     image: node:7.7.2-alpine
