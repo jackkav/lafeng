@@ -1,17 +1,10 @@
 {
-  "name": "hipstack",
+  "name": "lafeng",
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "start": "concurrently \"npm run server\" \"npm run client\"",
-    "server": "cd server && npm start",
-    "client": "cd client && npm start",
-    "docker": "docker-compose -f dev.yml up"
+    "start": "docker-compose -f dev.yml up"
   },
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "concurrently": "^3.4.0"
-  },
-  "main": "index.js"
+  "author": "Jack Kavanagh",
+  "license": "ISC"
 }
