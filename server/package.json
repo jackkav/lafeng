@@ -2,11 +2,30 @@
   "name": "server",
   "version": "1.0.0",
   "main": "index.js",
-  "license": "MIT", 
+  "license": "MIT",
   "scripts": {
-    "start": "node index.js"
+    "start": "babel-node index.js",
+    "watch": "nodemon index.js --exec babel-node",
+    "lint": "eslint ."
+  },
+  "engines": {
+    "node": ">=7.6.0"
   },
   "dependencies": {
-    "express": "^4.15.2"
+    "graphql": "^0.9.1",
+    "graphql-subscriptions": "^0.3.0",
+    "graphql-tools": "^0.10.1",
+    "koa": "^2.2.0",
+    "koa-convert": "^1.2.0",
+    "koa-graphql": "^0.6.2",
+    "koa-mount": "^2.0.0",
+    "koa-router": "7",
+    "mongodb": "^2.2.24"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.24.0",
+    "babel-preset-env": "^1.2.2",
+    "eslint": "^3.18.0",
+    "nodemon": "^1.11.0"
   }
 }
