@@ -1,0 +1,16 @@
+{
+  "name": "hipstack",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "start": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "cd client && npm start",
+    "client": "cd client && npm start"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^3.4.0"
+  },
+  "main": "index.js"
+}

@@ -1,0 +1,23 @@
+version: '3'
+services:
+  api:
+    image: node:7.7.2-alpine
+    volumes:
+      - yarn:/root/.cache/yarn
+      - ./server/:/app
+    working_dir: /app
+    ports:
+      - "3080:3080"
+    command: yarn build && yarn watch
+
+  client:
+    image: node:7.7.2-alpine
+    volumes:
+      - yarn:/root/.cache/yarn
+      - ./client/:/app
+    working_dir: /app
+    ports:
+      - "3080:3000"
+    command: yarn build && yarn watch
+volumes:
+  yarn:
