@@ -23,6 +23,10 @@ MongoClient.connect(process.env.MONGODB_URL)
       context: { db },
       schema,
       graphiql: true,
+      formatError: error => {
+        console.error(error)
+        return error
+      },
     })))
 
     app.use(router.routes()).use(router.allowedMethods())

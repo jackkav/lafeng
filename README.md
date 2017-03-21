@@ -15,8 +15,8 @@
 - [x] Backend linting and babel
 - [x] Dev mode file watching
 - [x] Graphql and mongo
-- [ ] User Management
-- [ ] Resolvers and schema
+- [x] User Management
+- [x] Resolvers and schema
 - [ ] GraphQl linting
 - [ ] Tests
 

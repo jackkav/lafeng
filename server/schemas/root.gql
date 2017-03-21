@@ -4,9 +4,10 @@ schema {
 }
 
 type Query {
-  appointments(day: String): [String]
+  user(nickname: String!): User
+  users: [User]
 }
 
 type Mutation {
-  createUser(name: String!, phone: String): Boolean!
+  createUser(nickname: String!, mobile: String): Boolean!
 }
