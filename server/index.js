@@ -1,8 +1,8 @@
-const Koa = require('koa')
-const Router = require( 'koa-router')
-const convert = require('koa-convert')
-const graphqlHTTP = require('koa-graphql')
-const fs = require( 'fs')
+import Koa from 'koa'
+import Router from  'koa-router'
+import convert from 'koa-convert'
+import graphqlHTTP from 'koa-graphql'
+import fs from 'fs'
 import { makeExecutableSchema } from 'graphql-tools'
 import { MongoClient } from 'mongodb'
 import { resolverMap } from './resolvers'
