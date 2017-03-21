@@ -8,5 +8,5 @@ type Query {
 }
 
 type Mutation {
-  createAppointment(payload: String): Boolean!
+  createUser(name: String!, phone: String): Boolean!
 }

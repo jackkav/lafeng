@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "start": "babel-node index.js",
-    "watch": "nodemon index.js --exec babel-node",
+    "watch": "nodemon index.js --exec babel-node --ext js,gql",
     "lint": "eslint ."
   },
   "engines": {
