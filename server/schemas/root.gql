@@ -4,6 +4,8 @@ schema {
 }
 
 type Query {
+  login: String
+  series(token:String!, id:ID!): Series
   visitor: Visitor
   visitors: [Visitor]
   user(nickname: String!): User

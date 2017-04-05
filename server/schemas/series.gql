@@ -1,0 +1,8 @@
+type Series {
+  id: ID
+  seriesName: String
+  status: String
+  overview: String
+  airsDayOfWeek: String
+  airsTime: String
+}
