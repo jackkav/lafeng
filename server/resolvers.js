@@ -1,12 +1,17 @@
 import freshId from 'fresh-id'
 import axios from 'axios'
-
+import pad from 'pad-left'
+import moment from 'moment'
 const fetchData = query =>{
   return axios.get(`https://api.thetvdb.com/${query}`,
       {headers: {'Authorization': `Bearer ${process.env.token}`}})
 }
 
 export const resolverMap = {
+  Episode:{
+    episodeCode: episode => `S${pad(episode.airedSeason,2,'0')}E${pad(episode.airedEpisodeNumber,2,'0')}`,
+    released: episode => moment(episode.firstAired).fromNow()
+  },
   Query: {
     async login(){
       const a = await axios.post('https://api.thetvdb.com/login',
@@ -35,8 +40,12 @@ export const resolverMap = {
     },
     async nextEpisode(_, args){
       const a = await fetchData(`series/${args.id}/episodes`)
-      if(a.status<400)
-      return a.data.data.filter(x=>(new Date(x.firstAired)>=new Date()))[0]
+      if(a.status<400){
+      const next = a.data.data.filter(x=>(new Date(x.firstAired)>=new Date()))[0]
+      const b =await fetchData(`episodes/${next.id}`)
+      console.log(b.data)
+      return b.data.data
+      }
     },
     async unairedEpisodes(_, args){
       const a = await fetchData(`series/${args.id}/episodes`)

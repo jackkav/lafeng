@@ -9,9 +9,15 @@ type Series {
 
 type Episode {
   id: ID
+  episodeCode: String
+  released: String
   episodeName: String
+  director: String
   airedSeason: Int
   airedEpisodeNumber: Int
   firstAired: String
   overview: String
+  seriesId: ID
+  series: Series
+  siteRating: Float
 }
