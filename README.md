@@ -23,6 +23,8 @@
 ### Client
 
 - [x] Storybook stories
+- [x] Styled Components
+- [ ] Prettier
 - [ ] Connect to server
 - [ ] Folder structure
 - [ ] Stateless component
