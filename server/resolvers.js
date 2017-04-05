@@ -36,12 +36,12 @@ export const resolverMap = {
     async nextEpisode(_, args){
       const a = await fetchData(`series/${args.id}/episodes`)
       if(a.status<400)
-      return a.data.data.filter(x=>(new Date(x.firstAired)>new Date()))[0]
+      return a.data.data.filter(x=>(new Date(x.firstAired)>=new Date()))[0]
     },
     async unairedEpisodes(_, args){
       const a = await fetchData(`series/${args.id}/episodes`)
       if(a.status<400)
-      return a.data.data.filter(x=>(new Date(x.firstAired)>new Date()))
+      return a.data.data.filter(x=>(new Date(x.firstAired)>=new Date()))
     },
     async visitor(_, args, { db }) {
       return db

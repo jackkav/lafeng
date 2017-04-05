@@ -16,12 +16,12 @@ const schema = makeExecutableSchema({
   typeDefs: schemasText,
 })
 //TODO login save token send token in context variable so fetch can use it in the resolver function
-MongoClient.connect(process.env.MONGODB_URL)
-  .then((db) => {
+// MongoClient.connect(process.env.MONGODB_URL)
+//   .then((db) => {
     console.log('Running...')
 
     router.all('/graphql', convert(graphqlHTTP({
-      context: { db },
+      // context: { db },
       schema,
       graphiql: true,
       formatError: error => {
@@ -33,4 +33,4 @@ MongoClient.connect(process.env.MONGODB_URL)
     app.use(router.routes()).use(router.allowedMethods())
 
     app.listen(3080)
-  })
+  // })

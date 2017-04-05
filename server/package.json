@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "start": "babel-node index.js",
-    "watch": "nodemon index.js --exec babel-node --ext js,gql",
+    "watch": "env-cmd ../.env nodemon index.js --exec babel-node --ext js,gql",
     "lint": "eslint ."
   },
   "engines": {
@@ -28,6 +28,7 @@
     "babel-cli": "^6.24.0",
     "babel-eslint": "^7.2.0",
     "babel-preset-env": "^1.2.2",
+    "env-cmd": "^5.0.0",
     "eslint": "^3.18.0",
     "nodemon": "^1.11.0"
   }
