@@ -17,9 +17,9 @@ const NextEpisode = ({ children, onClick, release, name, number }) => (
 
 NextEpisode.defaultProps = {
   children: 'Game of Thrones',
-  releaseDate: 'Today',
-  episodeNumber: 'S01E01',
-  episodeName: 'Name'
+  release: 'Today',
+  number: 'S01E01',
+  name: 'Name'
 }
 NextEpisode.propTypes = {
   children: React.PropTypes.string.isRequired,
@@ -33,7 +33,7 @@ const Container = styled.div`
   display: flex;
   flex: 1;
   flexDirection: row;
-  height: 150px;
+  height: 10u0px;
   justify-content: center;
   cursor: pointer;
   &:hover {
