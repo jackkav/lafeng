@@ -1,5 +1,5 @@
 import React from 'react'
-import RadioButton from '../src/stories/RadioButton'
+import RadioButton from '../src/components/RadioButton'
 import renderer from 'react-test-renderer'
 
 it('renders correctly without any props', () => {

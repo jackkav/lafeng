@@ -33,6 +33,9 @@ const Container = styled.div`
   flexDirection: row;
   height: 150px;
   justify-content: center;
+  &:hover {
+    color: grey;
+  }
 `
 const Image = styled.div`
   flex: 1;
@@ -43,6 +46,7 @@ const TextContainer = styled.div`
   flex-direction: column;
   flex: 4;
   background-color: grey;
+  font-family: Helvetica, Arial, sans-serif;
 `
 const InnerTextContainer = styled.div`
   display: flex;

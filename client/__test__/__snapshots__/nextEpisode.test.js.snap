@@ -1,0 +1,29 @@
+exports[`test renders correctly without any props 1`] = `
+<div
+  className="ciKBVK">
+  <div
+    className="gxzOve" />
+  <div
+    className="fRItGO">
+    <div
+      className="cVrTOJ">
+      <div
+        className="bDZGqW">
+        S01E01
+      </div>
+      <div
+        className="cGprWl">
+        Today
+      </div>
+    </div>
+    <div
+      className="gTnksx">
+      Game of Thrones
+    </div>
+    <div
+      className="gCMJK">
+      Name
+    </div>
+  </div>
+</div>
+`;
