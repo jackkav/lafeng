@@ -18,6 +18,18 @@ export const resolverMap = {
       if(a.status<400)
       return a.data.data
     },
+    async episode(_, args){
+      const a = await axios.get(`https://api.thetvdb.com/episodes/${args.id}`,
+      {headers: {'Authorization': `Bearer ${args.token}`}})
+      if(a.status<400)
+      return a.data.data
+    },
+    async episodes(_, args){
+      const a = await axios.get(`https://api.thetvdb.com/series/${args.id}/episodes`,
+      {headers: {'Authorization': `Bearer ${args.token}`}})
+      if(a.status<400)
+      return a.data.data
+    },
     async visitor(_, args, { db }) {
       return db
         .collection('vistors')

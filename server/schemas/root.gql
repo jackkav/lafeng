@@ -6,6 +6,8 @@ schema {
 type Query {
   login: String
   series(token:String!, id:ID!): Series
+  episode(token:String!, id:ID!): Episode
+  episodes(token:String!, id:ID!): [Episode]
   visitor: Visitor
   visitors: [Visitor]
   user(nickname: String!): User

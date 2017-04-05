@@ -6,3 +6,11 @@ type Series {
   airsDayOfWeek: String
   airsTime: String
 }
+
+type Episode {
+  id: ID
+  episodeName: String
+  airedSeason: Int
+  airedEpisodeNumber: Int
+  overview: String
+}
