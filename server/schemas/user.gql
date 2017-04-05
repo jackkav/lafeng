@@ -2,3 +2,7 @@ type User {
   nickname: String
   mobile: String
 }
+
+type Visitor {
+  city: String
+}

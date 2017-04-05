@@ -15,6 +15,7 @@ const schema = makeExecutableSchema({
   resolvers: resolverMap,
   typeDefs: schemasText,
 })
+//TODO login save token send token in context variable so fetch can use it in the resolver function
 MongoClient.connect(process.env.MONGODB_URL)
   .then((db) => {
     console.log('Running...')

@@ -2,6 +2,16 @@ import freshId from 'fresh-id'
 
 export const resolverMap = {
   Query: {
+    async visitor(_, args, { db }) {
+      return db
+        .collection('vistors')
+        .findOne(...args)
+    },
+    async visitors(_, args, { db }) {
+      return db
+        .collection('vistors')
+        .find().toArray()
+    },
     async user(_, args, { db }) {
       return db
         .collection('users')
