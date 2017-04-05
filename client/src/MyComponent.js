@@ -10,7 +10,8 @@ const episodes = [
     'airedEpisodeNumber': 3,
     'airedSeason': 1,
     'episodeCode': 'S01E03',
-    'released': 'a year ago'
+    'released': 'a year ago',
+    'banner': 'http://thetvdb.com/banners/_cache/graphical/280619-g8.jpg'
   },
   {
     'id': '5280276',
@@ -20,6 +21,7 @@ const episodes = [
     'airedEpisodeNumber': 4,
     'airedSeason': 1,
     'episodeCode': 'S01E04',
+    'banner': 'http://thetvdb.com/banners/_cache/graphical/280619-g8.jpg',
     'released': 'a year ago'
   },
   {
@@ -30,6 +32,7 @@ const episodes = [
     'airedEpisodeNumber': 13,
     'airedSeason': 2,
     'episodeCode': 'S02E13',
+    'banner': 'http://thetvdb.com/banners/_cache/graphical/280619-g8.jpg',
     'released': 'in 13 days'
   }
 ]

@@ -6,6 +6,7 @@ const NextEpisodeList = ({ episodes }) => (
     {episodes.map(episode => (
       <NextEpisode
         key={episode.name}
+        image={episode.banner}
         name={episode.episodeName}
         number={episode.episodeCode}
         release={episode.released}>

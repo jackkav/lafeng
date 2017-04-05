@@ -1,9 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
 
-const NextEpisode = ({ children, onClick, release, name, number }) => (
+const NextEpisode = ({ children, onClick, release, name, number, image }) => (
   <Container onClick={onClick}>
-    <Image />
+    <Image src={image} />
     <TextContainer>
       <FlexRow>
         <EpisodeNumber>{number}</EpisodeNumber>
@@ -26,7 +26,8 @@ NextEpisode.propTypes = {
   name: React.PropTypes.string,
   number: React.PropTypes.string,
   onClick: React.PropTypes.func,
-  release: React.PropTypes.string
+  release: React.PropTypes.string,
+  image: React.PropTypes.string
 }
 const FlexRow = styled.div`
   display: flex;
@@ -45,7 +46,7 @@ const Container = styled(FlexRow)`
     color: grey;
   }
 `
-const Image = styled.div`
+const Image = styled.img`
   flex: 1;
   background-color: powderblue;
 `

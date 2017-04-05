@@ -10,6 +10,7 @@ type Series {
 type Episode {
   id: ID
   episodeCode: String
+  banner: String
   released: String
   episodeName: String
   director: String
