@@ -5,10 +5,10 @@ const NextEpisode = ({ children, onClick, release, name, number }) => (
   <Container onClick={onClick}>
     <Image />
     <TextContainer>
-      <InnerTextContainer>
+      <FlexRow>
         <EpisodeNumber>{number}</EpisodeNumber>
         <ReleaseDay>{release}</ReleaseDay>
-      </InnerTextContainer>
+      </FlexRow>
       <SeriesName>{children}</SeriesName>
       <EpisodeName>{name}</EpisodeName>
     </TextContainer>
@@ -28,13 +28,18 @@ NextEpisode.propTypes = {
   onClick: React.PropTypes.func,
   release: React.PropTypes.string
 }
-
-const Container = styled.div`
+const FlexRow = styled.div`
   display: flex;
-  flex: 1;
   flexDirection: row;
-  height: 10u0px;
-  justify-content: center;
+  flex: 1;
+`
+const FlexColumn = styled.div`
+  display: flex;
+  flexDirection: column;
+  flex: 1;
+`
+const Container = styled(FlexRow)`
+  height: 150px;
   cursor: pointer;
   &:hover {
     color: grey;
@@ -44,42 +49,30 @@ const Image = styled.div`
   flex: 1;
   background-color: powderblue;
 `
-const TextContainer = styled.div`
-  display: flex;
-  flex-direction: column;
+const TextContainer = styled(FlexColumn)`
   flex: 4;
   background-color: grey;
   font-family: Helvetica, Arial, sans-serif;
 `
-const InnerTextContainer = styled.div`
+const CenteredText = styled.div`
   display: flex;
-  flex-direction: row;
   flex: 1;
-`
-const EpisodeNumber = styled.div`
-  display: flex;
   align-items: center;
+  background-color: darkgreen;
+`
+const EpisodeNumber = styled(CenteredText)`
   flex: 3;
   background-color: yellow;
 `
-const EpisodeName = styled.div`
-  display: flex;
-  align-items: center;
-  flex: 1;
+const ReleaseDay = styled(CenteredText)`
+  background-color: orange;
+`
+const SeriesName = styled(CenteredText)`
+  background-color: purple;
+`
+const EpisodeName = styled(CenteredText)`
   background-color: lightgreen;
 `
-const ReleaseDay = styled.div`
-  display: flex;
-  align-items: center;
-  flex: 1;
-  background-color: orange;
-  justify-content: center;
-`
-const SeriesName = styled.div`
-  display: flex;
-  align-items: center;
-  flex: 1;
-  background-color: darkgreen;
-`
+
 
 export default NextEpisode

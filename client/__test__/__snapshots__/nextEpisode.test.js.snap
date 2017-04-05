@@ -1,28 +1,28 @@
 exports[`test renders correctly without any props 1`] = `
 <div
-  className="hGewhV"
+  className="dKSjjh"
   onClick={undefined}>
   <div
     className="gxzOve" />
   <div
-    className="fRItGO">
+    className="dKiJMg">
     <div
-      className="cVrTOJ">
+      className="horuOo">
       <div
-        className="bDZGqW">
+        className="bFRrep">
         S01E01
       </div>
       <div
-        className="cGprWl">
+        className="llvQWI">
         Today
       </div>
     </div>
     <div
-      className="gTnksx">
+      className="hbRFvW">
       Game of Thrones
     </div>
     <div
-      className="gCMJK">
+      className="gXeSMS">
       Name
     </div>
   </div>
