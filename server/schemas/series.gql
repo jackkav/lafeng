@@ -9,8 +9,10 @@ type Series {
 
 type Episode {
   id: ID
+  airedSeasonID: ID
   episodeName: String
   airedSeason: Int
   airedEpisodeNumber: Int
+  firstAired: String
   overview: String
 }

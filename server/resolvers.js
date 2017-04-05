@@ -30,6 +30,18 @@ export const resolverMap = {
       if(a.status<400)
       return a.data.data
     },
+    async nextEpisode(_, args){
+      const a = await axios.get(`https://api.thetvdb.com/series/${args.id}/episodes`,
+      {headers: {'Authorization': `Bearer ${args.token}`}})
+      if(a.status<400)
+      return a.data.data.filter(x=>(new Date(x.firstAired)>new Date()))[0]
+    },
+    async unairedEpisodes(_, args){
+      const a = await axios.get(`https://api.thetvdb.com/series/${args.id}/episodes`,
+      {headers: {'Authorization': `Bearer ${args.token}`}})
+      if(a.status<400)
+      return a.data.data.filter(x=>(new Date(x.firstAired)>new Date()))
+    },
     async visitor(_, args, { db }) {
       return db
         .collection('vistors')

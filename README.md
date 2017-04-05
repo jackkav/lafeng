@@ -17,6 +17,8 @@
 - [x] Graphql and mongo
 - [x] User Management
 - [x] Resolvers and schema
+- [x] Query API
+- [ ] Cyclic queries
 - [ ] GraphQl linting
 - [ ] Tests
 
