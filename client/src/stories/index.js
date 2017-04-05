@@ -4,6 +4,7 @@ import Button from '../components/Button'
 import RadioButton from '../components/RadioButton'
 import Welcome from '../components/Welcome'
 import NextEpisode from '../components/NextEpisode'
+import NextEpisodeList from '../components/NextEpisodeList'
 
 // storiesOf('Welcome', module)
 //   .add('to Storybook', () => (
@@ -34,5 +35,14 @@ import NextEpisode from '../components/NextEpisode'
 
 storiesOf('NextEpisode', module)
   .add('with default props', () => (
-    <NextEpisode onClick={action('changed')}>Game of Thrones</NextEpisode>
+    <NextEpisode onClick={action('clicked')}>Game of Thrones</NextEpisode>
+  ))
+  .add('with custom props', () => (
+    <NextEpisode onClick={action('clicked')} name="Hello" number="S02E11">The Expanse</NextEpisode>
+  ))
+
+
+storiesOf('NextEpisodeList', module)
+  .add('with default props', () => (
+    <NextEpisodeList />
   ))

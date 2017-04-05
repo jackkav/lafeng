@@ -1,21 +1,20 @@
 import React from 'react'
 import styled from 'styled-components'
 
-
-
-const NextEpisode = ({ children, onClick, releaseDate, episodeName, episodeNumber }) => (
-  <Container>
+const NextEpisode = ({ children, onClick, release, name, number }) => (
+  <Container onClick={onClick}>
     <Image />
     <TextContainer>
       <InnerTextContainer>
-        <EpisodeNumber>{episodeNumber}</EpisodeNumber>
-        <ReleaseDay>{releaseDate}</ReleaseDay>
+        <EpisodeNumber>{number}</EpisodeNumber>
+        <ReleaseDay>{release}</ReleaseDay>
       </InnerTextContainer>
       <SeriesName>{children}</SeriesName>
-      <EpisodeName>{episodeName}</EpisodeName>
+      <EpisodeName>{name}</EpisodeName>
     </TextContainer>
   </Container>
 )
+
 NextEpisode.defaultProps = {
   children: 'Game of Thrones',
   releaseDate: 'Today',
@@ -24,7 +23,10 @@ NextEpisode.defaultProps = {
 }
 NextEpisode.propTypes = {
   children: React.PropTypes.string.isRequired,
-  onClick: React.PropTypes.func
+  name: React.PropTypes.string,
+  number: React.PropTypes.string,
+  onClick: React.PropTypes.func,
+  release: React.PropTypes.string
 }
 
 const Container = styled.div`
@@ -33,6 +35,7 @@ const Container = styled.div`
   flexDirection: row;
   height: 150px;
   justify-content: center;
+  cursor: pointer;
   &:hover {
     color: grey;
   }

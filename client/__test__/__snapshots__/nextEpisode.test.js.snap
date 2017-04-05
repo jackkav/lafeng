@@ -1,6 +1,7 @@
 exports[`test renders correctly without any props 1`] = `
 <div
-  className="ciKBVK">
+  className="gZhfdt"
+  onClick={undefined}>
   <div
     className="gxzOve" />
   <div
@@ -8,22 +9,16 @@ exports[`test renders correctly without any props 1`] = `
     <div
       className="cVrTOJ">
       <div
-        className="bDZGqW">
-        S01E01
-      </div>
+        className="bDZGqW" />
       <div
-        className="cGprWl">
-        Today
-      </div>
+        className="cGprWl" />
     </div>
     <div
       className="gTnksx">
       Game of Thrones
     </div>
     <div
-      className="gCMJK">
-      Name
-    </div>
+      className="gCMJK" />
   </div>
 </div>
 `;
