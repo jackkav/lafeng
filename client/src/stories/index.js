@@ -21,9 +21,12 @@ storiesOf('Button', module)
   ))
 
 storiesOf('RadioButton', module)
-  .add('with text', () => (
+  .add('with default props', () => (
     <RadioButton onChange={action('changed')} />
   ))
-  .add('as buttons', () => (
-    <RadioButton onChange={action('changed')} buttons />
+  .add('with custom options', () => (
+    <RadioButton onChange={action('changed')} options={[{label: 'a', value: 'a'}, {label: 'b', value: 'b'}]} />
+  ))
+  .add('with three options', () => (
+    <RadioButton onChange={action('changed')} options={[{label: 'a', value: 'a'}, {label: 'b', value: 'b'}, {label: 'c', value: 'c'}]} />
   ))

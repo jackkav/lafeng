@@ -1,0 +1,83 @@
+exports[`test renders correctly with two options 1`] = `
+<div
+  className="react-radio-buttons-group">
+  <div
+    className="react-radio-buttons-group__item">
+    <div
+      className="react-radio-button">
+      <input
+        className="react-radio-button__input"
+        id="sex[a]"
+        name="sex"
+        onChange={[Function]}
+        type="radio"
+        value="a" />
+      <label
+        className="react-radio-button__control"
+        htmlFor="sex[a]">
+        a
+      </label>
+    </div>
+  </div>
+  <div
+    className="react-radio-buttons-group__item">
+    <div
+      className="react-radio-button">
+      <input
+        className="react-radio-button__input"
+        id="sex[b]"
+        name="sex"
+        onChange={[Function]}
+        type="radio"
+        value="b" />
+      <label
+        className="react-radio-button__control"
+        htmlFor="sex[b]">
+        b
+      </label>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`test renders correctly without any props 1`] = `
+<div
+  className="react-radio-buttons-group">
+  <div
+    className="react-radio-buttons-group__item">
+    <div
+      className="react-radio-button">
+      <input
+        className="react-radio-button__input"
+        id="sex[male]"
+        name="sex"
+        onChange={[Function]}
+        type="radio"
+        value="male" />
+      <label
+        className="react-radio-button__control"
+        htmlFor="sex[male]">
+        Male 👨
+      </label>
+    </div>
+  </div>
+  <div
+    className="react-radio-buttons-group__item">
+    <div
+      className="react-radio-button">
+      <input
+        className="react-radio-button__input"
+        id="sex[female]"
+        name="sex"
+        onChange={[Function]}
+        type="radio"
+        value="female" />
+      <label
+        className="react-radio-button__control"
+        htmlFor="sex[female]">
+        Female 👩
+      </label>
+    </div>
+  </div>
+</div>
+`;
