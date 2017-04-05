@@ -1,61 +1,62 @@
 import React from 'react'
+import styled from 'styled-components'
+const Container = styled.div`
+  display: flex;
+  flex: 1;
+  flexDirection: row;
+  height: 150px;
+`
+const Image = styled.div`
+  flex: 1;
+  background-color: powderblue;
+`
+const TextContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  flex: 4;
+  background-color: grey;
+`
+const InnerTextContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+`
+const EpisodeNumber = styled.div`
+  flex: 3;
+  background-color: yellow;
+`
+const EpisodeName = styled.div`
+  flex: 1;
+  background-color: lightgreen;
+`
+const ReleaseDay = styled.div`
+  flex: 1;
+  background-color: orange;
+`
+const SeriesName = styled.div`
+  flex: 1;
+  background-color: darkgreen;
+`
 
-const container = {
-  display: 'flex',
-  flex: 1,
-  flexDirection: 'row',
-  height: 150
-}
-const image = {
-  flex: 1,
-  backgroundColor: 'powderblue'
-}
-const textContainer = {
-  display: 'flex',
-  flexDirection: 'column',
-  flex: 4,
-  backgroundColor: 'grey'
-}
-const innerTextContainer = {
-  flex: 1,
-  display: 'flex',
-  flexDirection: 'row',
-  backgroundColor: 'pink'
-}
-const episodeNumber = {
-  flex: 3,
-  backgroundColor: 'yellow'
-}
-const releaseDay = {
-  flex: 1,
-  backgroundColor: 'orange'
-}
-const seriesName = {
-  flex: 1,
-  backgroundColor: 'darkgreen'
-}
-const episodeName = {
-  flex: 1,
-  backgroundColor: 'lightgreen'
-}
 
-
-const NextEpisode = ({ children, onClick, releaseDate }) => (
-  <div style={container}>
-    <div style={image} />
-    <div style={textContainer}>
-      <div style={innerTextContainer}>
-        <div style={episodeNumber} />
-        <div style={releaseDay}>{releaseDate}</div>
-      </div>
-      <div style={seriesName} >{children}</div>
-      <div style={episodeName} />
-    </div>
-  </div>
+const NextEpisode = ({ children, onClick, releaseDate, episodeName, episodeNumber }) => (
+  <Container>
+    <Image />
+    <TextContainer>
+      <InnerTextContainer>
+        <EpisodeNumber>{episodeNumber}</EpisodeNumber>
+        <ReleaseDay>{releaseDate}</ReleaseDay>
+      </InnerTextContainer>
+      <SeriesName>{children}</SeriesName>
+      <EpisodeName>{episodeName}</EpisodeName>
+    </TextContainer>
+  </Container>
 )
 NextEpisode.defaultProps = {
   children: 'Game of Thrones',
-  releaseDate: 'Today'
+  releaseDate: 'Today',
+  episodeNumber: 'S01E01',
+  episodeName: 'Name'
 }
 NextEpisode.propTypes = {
   children: React.PropTypes.string.isRequired,
