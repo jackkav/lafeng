@@ -6,8 +6,9 @@ import fs from 'fs'
 import { makeExecutableSchema } from 'graphql-tools'
 import { MongoClient } from 'mongodb'
 import { resolverMap } from './resolvers'
-
+import cors from 'koa-cors'
 const app = new Koa()
+app.use(cors());
 const router = new Router()
 let schemasText = fs.readdirSync('./schemas/').map((fileName) => fs.readFileSync(`./schemas/${fileName}`, 'utf-8'))
 

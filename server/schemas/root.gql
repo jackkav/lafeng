@@ -5,11 +5,11 @@ schema {
 
 type Query {
   login: String
-  series(token:String!, id:ID!): Series
-  episode(token:String!, id:ID!): Episode
-  nextEpisode(token:String!, id:ID!): Episode
-  unairedEpisodes(token:String!, id:ID!): [Episode]
-  episodes(token:String!, id:ID!): [Episode]
+  series(id:ID!): Series
+  episode(id:ID!): Episode
+  nextEpisode(id:ID!): Episode
+  unairedEpisodes(id:ID!): [Episode]
+  episodes(id:ID!): [Episode]
   visitor: Visitor
   visitors: [Visitor]
   user(nickname: String!): User

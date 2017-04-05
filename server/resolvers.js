@@ -7,11 +7,15 @@ const fetchData = query =>{
       {headers: {'Authorization': `Bearer ${process.env.token}`}})
 }
 
+
 export const resolverMap = {
   Episode:{
     episodeCode: episode => `S${pad(episode.airedSeason,2,'0')}E${pad(episode.airedEpisodeNumber,2,'0')}`,
     released: episode => moment(episode.firstAired).fromNow(),
-    banner: episode=>'http://thetvdb.com/banners/_cache/graphical/280619-g8.jpg'
+    series: async episode => {
+      const a = await fetchData(`series/${episode.seriesId}`)
+      return a.data.data
+    }
   },
   Query: {
     async login(){

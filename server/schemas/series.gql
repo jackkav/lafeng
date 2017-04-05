@@ -5,6 +5,7 @@ type Series {
   overview: String
   airsDayOfWeek: String
   airsTime: String
+  banner: String
 }
 
 type Episode {

@@ -1780,6 +1780,10 @@ koa-convert@^1.2.0:
     co "^4.6.0"
     koa-compose "^3.0.0"
 
+koa-cors@^0.0.16:
+  version "0.0.16"
+  resolved "http://r.cnpmjs.org/koa-cors/download/koa-cors-0.0.16.tgz#98107993a7909e34c042986c5ec6156d77f3432e"
+
 koa-graphql@^0.6.2:
   version "0.6.2"
   resolved "http://r.cnpmjs.org/koa-graphql/download/koa-graphql-0.6.2.tgz#6fe7c9c44d8c2c104767a6e7edaf0e23c6093d39"
