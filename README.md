@@ -18,7 +18,7 @@
 - [x] User Management
 - [x] Resolvers and schema
 - [x] Query API
-- [ ] Cyclic queries
+- [x] Cyclic queries
 - [ ] GraphQl linting
 - [ ] Tests
 
@@ -26,17 +26,17 @@
 
 - [x] Storybook stories
 - [x] Styled Components
+- [x] Connect to server
 - [ ] Prettier
-- [ ] Connect to server
 - [ ] Folder structure
-- [ ] Stateless component
-- [ ] PropTypes
+- [x] Stateless component
+- [x] PropTypes
 - [ ] Local state
 - [ ] Exports
-- [ ] Styling
+- [x] Styling
 - [ ] Container
 - [ ] Textbox Component
-- [ ] Radio button Component
+- [x] Radio button Component
 - [ ] Checkbox Component
 - [ ] Redux middleware
 - [ ] Redux reducers
