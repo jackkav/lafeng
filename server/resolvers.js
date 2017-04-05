@@ -1,5 +1,11 @@
 import freshId from 'fresh-id'
 import axios from 'axios'
+
+const fetchData = query =>{
+  return axios.get(`https://api.thetvdb.com/${query}`,
+      {headers: {'Authorization': `Bearer ${process.env.token}`}})
+}
+
 export const resolverMap = {
   Query: {
     async login(){
@@ -13,32 +19,27 @@ export const resolverMap = {
       return a.data.token
     },
     async series(_, args){
-      const a = await axios.get(`https://api.thetvdb.com/series/${args.id}`,
-      {headers: {'Authorization': `Bearer ${args.token}`}})
+      const a = await fetchData(`series/${args.id}`)
       if(a.status<400)
       return a.data.data
     },
     async episode(_, args){
-      const a = await axios.get(`https://api.thetvdb.com/episodes/${args.id}`,
-      {headers: {'Authorization': `Bearer ${args.token}`}})
+      const a = await fetchData(`episodes/${args.id}`)
       if(a.status<400)
       return a.data.data
     },
     async episodes(_, args){
-      const a = await axios.get(`https://api.thetvdb.com/series/${args.id}/episodes`,
-      {headers: {'Authorization': `Bearer ${args.token}`}})
+      const a = await fetchData(`series/${args.id}/episodes`)
       if(a.status<400)
       return a.data.data
     },
     async nextEpisode(_, args){
-      const a = await axios.get(`https://api.thetvdb.com/series/${args.id}/episodes`,
-      {headers: {'Authorization': `Bearer ${args.token}`}})
+      const a = await fetchData(`series/${args.id}/episodes`)
       if(a.status<400)
       return a.data.data.filter(x=>(new Date(x.firstAired)>new Date()))[0]
     },
     async unairedEpisodes(_, args){
-      const a = await axios.get(`https://api.thetvdb.com/series/${args.id}/episodes`,
-      {headers: {'Authorization': `Bearer ${args.token}`}})
+      const a = await fetchData(`series/${args.id}/episodes`)
       if(a.status<400)
       return a.data.data.filter(x=>(new Date(x.firstAired)>new Date()))
     },
