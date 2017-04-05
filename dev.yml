@@ -9,7 +9,7 @@ services:
       - ./server/:/app
     working_dir: /app
     ports:
-      - "3090:3080"
+      - "3080:3080"
     command: yarn watch
 
   client:
@@ -19,7 +19,7 @@ services:
       - ./client/:/app
     working_dir: /app
     ports:
-      - "3070:3000"
+      - "3000:3000"
     command: yarn start
 volumes:
   yarn:

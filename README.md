@@ -22,6 +22,7 @@
 
 ### Client
 
+- [x] Storybook stories
 - [ ] Connect to server
 - [ ] Folder structure
 - [ ] Stateless component
